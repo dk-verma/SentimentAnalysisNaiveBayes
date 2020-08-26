@@ -1,4 +1,4 @@
-#wordbag
+#wordbag ( word -> frequency of this word in all 4 table's tweet data )
 import pandas as pd
 
 #import my csv files
