@@ -13,31 +13,6 @@ df = pd.read_csv("unsmile.csv")
 #Remove any rows with a "nan" in them
 df = df.dropna(axis=0, how = 'any')
 
-#Make it so that any non readable text gets converted into nothing
-def removetext(text):
-    return ''.join([i if ord(i) < 128 else '' for i in text])
-
-#Here I am doing the actual removing
-df['text'] = df['text'].apply(removetext)
-
-#Make all my texts lower case
-df['text'] = df['text'].apply(lambda x: x.lower())
-
-#Get rid of all weird punctuation and extra lines
-df['text'] = df['text'].apply(lambda x: x.replace('.',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('\n',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('?',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('!',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('"',' '))
-df['text'] = df['text'].apply(lambda x: x.replace(';',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('#',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('&amp',' '))
-df['text'] = df['text'].apply(lambda x: x.replace(',',' '))
-df['text'] = df['text'].apply(lambda x: x.replace("i'm","im"))
-df['text'] = df['text'].apply(lambda x: x.replace("it's","its"))
-
-#df['text'] = df['text'].apply(lambda x: x.replace("sad",' '))
-#re.findall(r"\b:(")
 #Here I get each unique keyword from my dataframe
 array = df['text'].str.split(' ', expand=True).stack().value_counts()
 #print(array) to see what this looks like
