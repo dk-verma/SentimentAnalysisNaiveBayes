@@ -1,3 +1,4 @@
+#testing for twitter labeled data
 import pandas as pd
 import numpy as np
 import sklearn
@@ -52,26 +53,3 @@ sklearn.metrics.accuracy_score(y_true, y_pred)
 sklearn.metrics.precision_score(y_true, y_pred)    
         
 df.to_csv('test.csv', header=True, index=False, encoding='utf-8')        
-
-'''def removetext(text):
-    return ''.join([i if ord(i) < 128 else '' for i in text])
-
-#Here I am doing the actual removing
-df['text'] = df['text'].apply(removetext)
-
-#Make all my texts lower case
-df['text'] = df['text'].apply(lambda x: x.lower())
-
-#Get rid of all weird punctuation and extra lines
-df['text'] = df['text'].apply(lambda x: x.replace('.',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('\n',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('?',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('!',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('"',' '))
-df['text'] = df['text'].apply(lambda x: x.replace(';',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('#',' '))
-df['text'] = df['text'].apply(lambda x: x.replace('&amp',' '))
-df['text'] = df['text'].apply(lambda x: x.replace(',',' '))
-df['text'] = df['text'].apply(lambda x: x.replace("i'm","im"))
-df['text'] = df['text'].apply(lambda x: x.replace("it's","its"))
-'''
