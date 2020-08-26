@@ -1,4 +1,4 @@
-#cleaning tweets
+#cleaning tweets and creating word frequency for each 4 tables
 import string
 import json
 import csv
