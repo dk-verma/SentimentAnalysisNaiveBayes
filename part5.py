@@ -1,4 +1,4 @@
-#Create your frequency table
+#Create your frequency table for every word with their frequency in positive and negative tweets
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
